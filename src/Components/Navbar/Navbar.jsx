@@ -12,7 +12,7 @@ const Navbar = () => {
        <Toolbar>
         {/* left side */}
          <Typography variant='h6' className= {classes.title} color= 'inherit'>   
-            <img src= {logo} alt="Open" height='30px' className= {classes.image} />
+            <img src= {logo} alt="Open" height='60px' className= {classes.image} />
              Open
          </Typography>
          <div className= {classes.grow} />
