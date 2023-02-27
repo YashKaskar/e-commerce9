@@ -4,7 +4,7 @@ import logo from '../../Assets/e-commerce_logo.png'
 import { ShoppingCart } from '@material-ui/icons'
 import useStyles from './style'
 
-const Navbar = () => {
+const Navbar = ({totalItems}) => {
     const classes = useStyles();
   return (
     <>
@@ -19,7 +19,7 @@ const Navbar = () => {
          {/* right side */}
          <div className={classes.button}>
             <IconButton aria-label='Show cart items' color='inherit'>
-                <Badge badgeContent = {2} color= 'secondary'overlap="rectangular">
+                <Badge badgeContent = {totalItems} color= 'secondary'overlap="rectangular">
                     <ShoppingCart />
                 </Badge>
             </IconButton>
