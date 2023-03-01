@@ -5,7 +5,7 @@ import { Card, CardActions, CardContent, CardMedia, Typography, Button } from '@
 const CartItem = ({item}) => {
     const classes = useStyles();
 
-  return (
+    return (
       < Card className='cart-item'>
           <CardMedia image={item.image.url} alt={item.name} className={classes.media} />
           <CardContent className={classes.cardContent}> 
