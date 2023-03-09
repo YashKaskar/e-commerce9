@@ -16,6 +16,7 @@ function FormInput({ name, label }) {
                 fullWidth
                 label={label}
                 required
+                onChange={e.target.value}
                 error={isError} />
             )}
          />
