@@ -38,14 +38,14 @@ const AddressForm = ({ checkoutToken, test }) => {
 
   useEffect(() => {
     fetchShippingCountries(checkoutToken.id);
-  }, []);
+  },);
 
   useEffect(() => {
     if (shippingCountry) fetchSubdivisions(shippingCountry);
   }, [shippingCountry]);
 
   useEffect(() => {
-    if (shippingSubdivision) fetchShippingOptions(checkoutToken.id, shippingCountry, shippingSubdivision);
+    if (shippingSubdivision) fetchShippingOptions(shippingSubdivision);
   }, [shippingSubdivision]);
 
   return (

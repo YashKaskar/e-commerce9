@@ -49,16 +49,12 @@ const App = () => {
     try {
       const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder);
 
-      setOrder(incomingOrder);
-
-      refreshCart();
+      setOrder(incomingOrder)
+      
     } catch (error) {
       setErrorMessage(error.data.error.message);
     }
   };
-
-  
-
 
   useEffect(() => {  
     fetchProducts();
