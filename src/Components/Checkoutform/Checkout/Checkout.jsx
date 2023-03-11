@@ -31,7 +31,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
         }
       };
 
-      generateToken();
+      generateToken(activeStep, history);
     }
   },[cart]);
 
