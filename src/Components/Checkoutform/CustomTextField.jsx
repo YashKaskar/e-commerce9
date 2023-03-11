@@ -15,8 +15,10 @@ function FormInput({ name, label }) {
               <TextField
                 fullWidth
                 label={label}
+                {...field}
                 required
                 onChange={(e) => e.target.value}
+                value={field.value}
                 error={isError} />
             )}
          />
