@@ -18,7 +18,7 @@ function FormInput({ name, label }) {
                 {...field}
                 required
                 onChange={(e) => e.target.value}
-                value={field.value}
+                
                 error={isError} />
             )}
          />
