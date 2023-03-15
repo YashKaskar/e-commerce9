@@ -22,7 +22,7 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, onCaptur
     } else {
       const orderData = {
         line_items: checkoutToken.line_items,
-        customer: { firstname: shippingData.firstName, lastname: shippingData.lastName, email: shippingData.email },
+        customer: { firstName: shippingData.firstName, lastName: shippingData.lastName, email: shippingData.email },
         shipping: { name: 'International', street: shippingData.address1, town_city: shippingData.city, county_state: shippingData.shippingSubdivision, postal_zip_code: shippingData.zip, country: shippingData.shippingCountry },
         fulfillment: { shipping_method: shippingData.shippingOption },
         payment: {
@@ -34,16 +34,16 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, onCaptur
       };
 
       onCaptureCheckout(checkoutToken.id, orderData);
-      
+
       nextStep();
     }
-
   };
+
   return (
     <>
       <Review checkoutToken={checkoutToken} />
       <Divider />
-      <Typography variant='h6' gutterBottom style={{ margin: '20px 0' }}> Payment method </Typography>
+      <Typography variant="h6" gutterBottom style={{ margin: '20px 0' }}>Payment method</Typography>
       <Elements stripe={stripePromise}>
         <ElementsConsumer>{({ elements, stripe }) => (
           <form onSubmit={(e) => handleSubmit(e, elements, stripe)}>
@@ -60,7 +60,7 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, onCaptur
         </ElementsConsumer>
       </Elements>
     </>
-  )
-}
+  );
+};
 
-export default PaymentForm
+export default PaymentForm;
