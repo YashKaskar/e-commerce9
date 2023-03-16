@@ -14,7 +14,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [shippingData, setShippingData] = useState({});
   const classes = useStyles();
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
   const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
@@ -27,13 +27,13 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
 
           setCheckoutToken(token);
         } catch {
-          if (activeStep !== steps.length) history.push('/');
+          if (activeStep !== steps.length) navigate.push('/');
         }
       };
 
       generateToken();
     }
-  }, [cart, activeStep, history]);
+  }, [cart, activeStep, navigate]);
 
   const test = (data) => {
     setShippingData(data);
