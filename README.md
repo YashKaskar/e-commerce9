@@ -20,4 +20,4 @@ ECommerce is an online store where you can buy things
 8. Routes 
 
 **To Watch this project**
-Link : ()
+Link : (https://open7.netlify.app/)
