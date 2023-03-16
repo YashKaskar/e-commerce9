@@ -41,26 +41,28 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     nextStep();
   };
 
-  let Confirmation = () => (order.customer ? (
+  let Confirmation = () => order.customer ? (
     <>
       <div>
-        <Typography variant="h5">Thank you for your purchase, {order.customer.firstName} {order.customer.lastName}!</Typography>
-        <Divider className={classes.divider} />
-        <Typography variant="subtitle2">Order ref: {order.customer_reference}</Typography>
+        <Typography variant='h5'>Thankyou my friend for the purchase, {order.customer.firstname} {order.customer.lastname}</Typography>
+        <Typography variant='h4'>{order.customer.address1} {order.customer.email} { order.customer.city}</Typography>
+        <Divider className={classes.divder} />
+        <Typography variant='subtitle2'>Order ref : {order.customer_reference} </Typography>
       </div>
       <br />
-      <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
+      <Button  component={ Link } to='/' variant='outlined' type='button'>Back to home</Button>
     </>
-  ) : (
-    <div className={classes.spinner}>
-      <CircularProgress />
-    </div>
-  ));
-
+  ) : ( 
+      <div className={classes.spinner}>
+        <CircularProgress />
+        
+      </div>
+  )
+  
   if (error) {
     Confirmation = () => (
       <>
-        <Typography variant="h5">Error: {error}</Typography>
+        <Typography variant="h5">Thank you for the purchase. Keep Shopping with <b>Open</b> </Typography>
         <br />
         <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
       </>

@@ -85,7 +85,9 @@ const App = () => {
               handleRemoveCart={handleRemoveCart}
               handleEmptyCart={handleEmptyCart}
             />} />
-          <Route exact path='/checkout' element={< Checkout
+          <Route exact path='/checkout'
+            element={
+              < Checkout
             cart={cart}
             order={order}
             onCaptureCheckout={handleCaptureCheckout} 
